@@ -26,7 +26,7 @@ CREATE INDEX IF NOT EXISTS idx_chamados_data_abertura ON chamados(data_abertura)
 CREATE TABLE IF NOT EXISTS chamados_simplificados (
     id_da_item INTEGER PRIMARY KEY,
     resumo VARCHAR(255) NOT NULL,
-    tipo_do_ticket VARCHAR(100),
+    tipo VARCHAR(100),
     status VARCHAR(100),
     nome_do_projeto VARCHAR(255),
     responsavel VARCHAR(255),

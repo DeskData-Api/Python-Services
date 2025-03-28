@@ -62,10 +62,10 @@ class Database:
                 with conn.cursor() as cur:
                     query = """
                         INSERT INTO chamados_simplificados (
-                            id_da_item, resumo, tipo_do_ticket, status, nome_do_projeto,
+                            id_da_item, resumo, tipo, status, nome_do_projeto,
                             responsavel, criado, atualizado, resolvido, descricao, anexos
                         ) VALUES (
-                            %(id_da_item)s, %(resumo)s, %(tipo_do_ticket)s, %(status)s,
+                            %(id_da_item)s, %(resumo)s, %(tipo)s, %(status)s,
                             %(nome_do_projeto)s, %(responsavel)s, %(criado)s,
                             %(atualizado)s, %(resolvido)s, %(descricao)s, %(anexos)s
                         )

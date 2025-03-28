@@ -33,12 +33,18 @@ def clean_space(value):
 def parse_boolean(value):
     return value == 'Sim'
 
+def entidade(value):
+    return str(value).replace('ITO1 > ITO1_SD > ','')
+
+def categoria(value):
+    return str(value).split('>')[-1].strip()
+
 def process_ticket_row(row):
     return {
         'id': int(row['ID']),
         'titulo': row['Título'],
-        'entidade': row['Entidade'],
-        'categoria': row['Categoria'],
+        'entidade': entidade(row['Entidade']),
+        'categoria': categoria(row['Categoria']),
         'localizacao': row['Localização'],
         'elementos_associados': clean_caracter(row['Elementos associados']),
         'data_abertura': parse_date(row['Data de abertura']),

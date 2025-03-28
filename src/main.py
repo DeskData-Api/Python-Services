@@ -8,21 +8,21 @@ def main():
     db = Database()
     db.initialize()
 
-    # # Processa os chamados
-    # file_path = r'data\chamados.csv'
-    # chamados = parse_tickets(os.path.abspath(file_path))
+    # Processa os chamados
+    file_path = r'data\chamados.csv'
+    chamados = parse_tickets(os.path.abspath(file_path))
 
-    # # Insere os chamados no banco
-    # success_count = 0
-    # for chamado in chamados:
-    #     if db.insert_ticket(chamado):
-    #         success_count += 1
-    #     print(f"Processado chamado ID: {chamado['id']}")
+    # Insere os chamados no banco
+    success_count = 0
+    for chamado in chamados:
+        if db.insert_ticket(chamado):
+            success_count += 1
+        print(f"Processado chamado ID: {chamado['id']}")
 
-    # print(f"\nProcessamento concluído!")
-    # print(f"Total de chamados: {len(chamados)}")
-    # print(f"Inseridos com sucesso: {success_count}")
-    # print(f"Falhas: {len(chamados) - success_count}")
+    print(f"\nProcessamento concluído!")
+    print(f"Total de chamados: {len(chamados)}")
+    print(f"Inseridos com sucesso: {success_count}")
+    print(f"Falhas: {len(chamados) - success_count}")
 
     file_path = r'data\tickets_simplificados.csv'
     chamados = parse_tickets_simplificados(os.path.abspath(file_path))
