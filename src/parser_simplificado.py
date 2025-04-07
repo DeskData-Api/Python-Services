@@ -2,80 +2,60 @@ import pandas as pd
 from datetime import datetime
 import re
 import json
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+import unidecode
+import string
 
-def parse_date(date_str):
-    """Converte string de data para datetime ou retorna None se inválida."""
-    if not date_str or pd.isna(date_str) or date_str == '-':
-        return None
-    try:
-        # Ajuste para diferentes formatos de data no documento
-        formats = ['%d/%b/%y %I:%M %p', '%Y-%m-%d %H:%M:%S.%f', '%d/%m/%y %H:%M']
-        for fmt in formats:
-            try:
-                return datetime.strptime(date_str, fmt)
-            except ValueError:
-                continue
-        return None
-    except Exception:
-        return None
+# Baixe uma vez:
+# nltk.download('punkt')
+# nltk.download('stopwords')
 
-def clean_text(value):
-    """Limpa campos de texto, substituindo valores ausentes por string vazia."""
-    if pd.isna(value) or value == '-' or value is None:
-        return ""    
-    return str(value).replace('[System]','').strip()
+stopwords_pt = set(stopwords.words('portuguese'))
+punct_translator = str.maketrans('', '', string.punctuation)
+regex_color = re.compile(r'\{color:#(?:[0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})\}|\{color\}|\{color:transparent\}')
+regex_inline = re.compile(r'![^!]+!')
+regex_links = re.compile(r'<[^>]+>')
+regex_spaces = re.compile(r'\s+')
 
-def extract_attachments(row):
-    """Extrai apenas os nomes dos anexos, ignorando links."""
-    anexo_cols = [col for col in row.index if col.startswith('Anexo')]
-    anexos = [clean_text(row[col]).split('|')[0].strip() if '|' in clean_text(row[col]) else clean_text(row[col]) 
-              for col in anexo_cols if clean_text(row[col])]
-    return '; '.join(filter(None, anexos))  # Junta os nomes com ponto e vírgula
+def preprocess_text(text):
+    """Pré-processa texto com limpeza, acentuação, pontuação, stopwords e tokenização."""
+    if not isinstance(text, str):
+        return ""
+    text = unidecode.unidecode(text.lower())
+    text = text.translate(punct_translator)
+    tokens = word_tokenize(text)
+    return ' '.join([t for t in tokens if t not in stopwords_pt])
 
 def clean_space(value):
-    value = str(value).strip()  # Remove espaços antes e depois
+    if not isinstance(value, str):
+        return ""
 
-    # Remove marcações de cor {color:#XXXXXX} ou {color:#XXX}, onde X é um código hexadecimal
-    value = re.sub(r'\{color:#(?:[0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})\}', '', value)  # Remove {color:#fff} ou {color:#000000}
-    value = re.sub(r'\{color\}', '', value)  # Remove {color} isolado
-    value = re.sub(r'\{color:transparent\}', '', value)  # Remove {color} isolado
+    value = value.strip()
+    value = regex_color.sub('', value)
+    value = regex_inline.sub('', value)
+    value = regex_links.sub('', value)
+    value = value.replace('|', '').replace('\n', ' ').replace('\\', ' ')
+    value = regex_spaces.sub(' ', value)
+    value = value.replace('nan', '').strip()
 
-    # Remove marcações com !...! (como imagens ou links inline)
-    value = re.sub(r'![^!]+!', '', value)
-
-    # Remove links entre <[...]>
-    value = re.sub(r'<[^>]+>', '', value)
-
-    # Remove todos os caracteres |
-    value = value.replace('|', '')
-
-    # Remove todas as quebras de linha e barras invertidas, unindo tudo em uma linha com espaços
-    value = value.replace('\n', ' ').replace('\\', ' ').strip()
-
-    # Remove espaços duplicados
-    value = re.sub(r'\s+', ' ', value).strip()
-
-    value = value.replace('nan','')
-    
     if value.startswith('{adf}'):
-        return extract_text_from_adf(value)
-
-    return value
+        return preprocess_text(extract_text_from_adf(value))
+    
+    return preprocess_text(value)
 
 def extract_text_from_adf(adf_content):
-    """Extrai apenas o texto essencial de um conteúdo no formato ADF."""
+    """Extrai texto limpo de conteúdo ADF (formato JSON)."""
     try:
-        # Se o conteúdo for uma string, converte para JSON
         if isinstance(adf_content, str):
-            adf_content = adf_content.replace('{adf}', '').replace('{adf}', '')
+            adf_content = adf_content.replace('{adf}', '')
             data = json.loads(adf_content)
         else:
             data = adf_content
 
-        # Variável para armazenar o texto extraído
         extracted_text = []
 
-        # Função recursiva para processar o conteúdo
         def process_content(content):
             if not content:
                 return
@@ -87,21 +67,40 @@ def extract_text_from_adf(adf_content):
                     if text:
                         extracted_text.append(text)
 
-        # Processa o conteúdo principal
         if "content" in data:
             process_content(data["content"])
 
-        # Junta o texto extraído com quebras de linha onde apropriado
-        final_text = " ".join(extracted_text)
-        
-        return clean_space(final_text)
+        return ' '.join(extracted_text)
 
     except Exception as e:
         print(f"Erro ao processar o ADF: {e}")
         return ""
 
+def parse_date(date_str):
+    if not date_str or pd.isna(date_str) or date_str == '-':
+        return None
+    formats = ['%d/%b/%y %I:%M %p', '%Y-%m-%d %H:%M:%S.%f', '%d/%m/%y %H:%M']
+    for fmt in formats:
+        try:
+            return datetime.strptime(date_str, fmt)
+        except ValueError:
+            continue
+    return None
+
+def extract_attachments(row):
+    """Extrai nomes dos anexos (sem links)."""
+    anexo_cols = [col for col in row.index if col.startswith('Anexo')]
+    anexos = [
+        clean_text(row[col]).split('|')[0].strip()
+        for col in anexo_cols if clean_text(row[col])
+    ]
+    return '; '.join(filter(None, anexos))
+
+def clean_text(value):
+    return preprocess_text(value) if isinstance(value, str) else ""
+
 def process_ticket_row(row):
-    """Processa uma linha do CSV para a tabela simplificada."""
+    """Processa uma linha do CSV para a tabela simplificada com PLN aplicado."""
     id_value = row['ID da item']
     if pd.isna(id_value) or id_value == '-':
         raise ValueError(f"ID inválido na linha: {row}")
