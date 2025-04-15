@@ -4,7 +4,7 @@ import re
 import json
 import nltk
 from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
+# from nltk.tokenize import word_tokenize
 import unidecode
 import string
 
@@ -25,7 +25,7 @@ def preprocess_text(text):
         return ""
     text = unidecode.unidecode(text.lower())
     text = text.translate(punct_translator)
-    tokens = word_tokenize(text)
+    tokens = text.split()
     return ' '.join([t for t in tokens if t not in stopwords_pt])
 
 def clean_space(value):

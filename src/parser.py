@@ -3,13 +3,14 @@ from datetime import datetime
 import re
 import nltk
 from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
 import unidecode
 import string
 
-# Baixar se necessário:
-# nltk.download('punkt')
-# nltk.download('stopwords')
+# Verifica e baixa 'stopwords' se necessário
+try:
+    nltk.data.find("corpora/stopwords")
+except LookupError:
+    nltk.download("stopwords")
 
 stopwords_pt = set(stopwords.words('portuguese'))
 regex_solicitante = re.compile(r'^.*?Solicitante:.*?\n', flags=re.IGNORECASE | re.DOTALL)
@@ -27,7 +28,7 @@ def preprocess_text(text):
     #remoção de pontuação
     text = text.translate(punct_translator)
     #tokenização
-    tokens = word_tokenize(text)
+    tokens = text.split()
     #stopwords
     tokens = [t for t in tokens if t not in stopwords_pt]
     return ' '.join(tokens)
