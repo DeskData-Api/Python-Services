@@ -25,17 +25,17 @@ services:
     depends_on:
       - db
 
-  frontend:
-    image: node:20
-    container_name: chamados_frontend
-    working_dir: /app
-    volumes:
-      - ../Frontend-Web/Frontend-Web:/app
-    command: sh -c "npm install && npm run dev"
-    ports:
-      - "5173:5173"
-    depends_on:
-      - backend
+  # frontend:
+  #   image: node:20
+  #   container_name: chamados_frontend
+  #   working_dir: /app
+  #   volumes:
+  #     - ../Frontend-Web/Frontend-Web:/app
+  #   command: sh -c "npm install && npm run dev"
+  #   ports:
+  #     - "5173:5173"
+  #   depends_on:
+  #     - backend
 
   python_service:
     image: python:3.11
