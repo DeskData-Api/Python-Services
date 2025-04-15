@@ -1,10 +1,11 @@
 import psycopg2
+import time
 from psycopg2.extras import RealDictCursor
 
 class Database:
     def __init__(self):
         self.conn_params = {
-            "host": "localhost",
+            "host": "db",
             "database": "chamados_db",
             "user": "deskdata",
             "password": "deskdata",
@@ -13,6 +14,18 @@ class Database:
 
     def connect(self):
         return psycopg2.connect(**self.conn_params, cursor_factory=RealDictCursor)
+
+    def wait_for_db(params, retries=5, delay=3):
+        for i in range(retries):
+            try:
+                conn = psycopg2.connect(**params)
+                conn.close()
+                print("✅ Banco de dados disponível!")
+                return
+            except psycopg2.OperationalError as e:
+                print(f"⏳ Tentativa {i+1} falhou: {e}")
+                time.sleep(delay)
+        raise Exception("❌ Não foi possível conectar ao banco de dados após várias tentativas.")
 
     def initialize(self):
         conn = self.connect()

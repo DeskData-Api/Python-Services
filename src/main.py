@@ -6,10 +6,12 @@ import os
 def main():
     # Inicializa o banco de dados
     db = Database()
+    Database.wait_for_db(db.conn_params)
     db.initialize()
 
+
     # Processa os chamados
-    file_path = r'data\chamados.csv'
+    file_path = os.path.join("data", "chamados.csv")
     chamados = parse_tickets(os.path.abspath(file_path))
 
     # Insere os chamados no banco
@@ -24,7 +26,7 @@ def main():
     print(f"Inseridos com sucesso: {success_count}")
     print(f"Falhas: {len(chamados) - success_count}")
 
-    file_path = r'data\tickets_simplificados.csv'
+    file_path = os.path.join("data", "tickets_simplificados.csv")
     chamados = parse_tickets_simplificados(os.path.abspath(file_path))
 
     success_count = 0
