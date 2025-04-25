@@ -5,7 +5,7 @@ from psycopg2.extras import RealDictCursor
 class Database:
     def __init__(self):
         self.conn_params = {
-            "host": "db",
+            "host": "localhost",
             "database": "chamados_db",
             "user": "deskdata",
             "password": "deskdata",
@@ -90,3 +90,30 @@ class Database:
             return False
         finally:
             conn.close()
+            
+    def insert_similaridades(self, similaridades):
+        conn = self.connect()
+        try:
+            with conn.cursor() as cur:
+                for item in similaridades:
+                    try:
+                        cur.execute("""
+                            INSERT INTO similaridade_chamados (chamado_1, chamado_2, label, score)
+                            VALUES (%s, %s, %s, %s)
+                        """, (
+                            int(item['chamado_1']),
+                            int(item['chamado_2']),
+                            str(item['label']),
+                            float(item['score'])
+                        ))
+                        conn.commit()  # Comita a inserção bem-sucedida
+                    except Exception as e:
+                        conn.rollback()  # Reverte apenas essa transação com erro
+                        print(f"❌ Erro ao inserir item {item}: {e}")
+            print("✅ Inserção de similaridades concluída com sucesso.")
+        except Exception as e:
+            print(f"❌ Erro na transação geral: {e}")
+        finally:
+            conn.close()
+
+
