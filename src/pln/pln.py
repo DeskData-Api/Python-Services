@@ -24,25 +24,28 @@ def frequencia_categoria(df):
     # Conversão da data
     df['data_abertura'] = pd.to_datetime(df['data_abertura'], errors='coerce')
 
-    # Agrupamento semanal por categoria
-    df['semana'] = df['data_abertura'].dt.to_period('W').astype(str)
-    semana_categoria = df.groupby(['semana', 'categoria']).size().unstack(fill_value=0)
+    # Criar coluna de quinzena manualmente
+    df['quinzena'] = df['data_abertura'].apply(
+    lambda d: f"{d.month:02d}/{d.year} (1ª Quinzena)" if d.day <= 15 else f"{d.month:02d}/{d.year} (2ª Quinzena)"
+    )
+    
+    quinzena_categoria = df.groupby(['quinzena', 'categoria']).size().unstack(fill_value=0)
 
-    # Agora para cada semana, pegar a categoria mais citada
-    top_categoria_semana = []
+    # Agora para cada quinzena, pegar a categoria mais citada
+    top_categoria_quinzena = []
 
-    for semana, categorias in semana_categoria.iterrows():
+    for quinzena, categorias in quinzena_categoria.iterrows():
         if categorias.sum() == 0:
             continue
-        categoria_top = categorias.idxmax()  # pega o nome da categoria mais citada
-        total_top = categorias.max()          # pega a quantidade dela
-        top_categoria_semana.append({
-            "semana": semana,
+        categoria_top = categorias.idxmax()
+        total_top = categorias.max()
+        top_categoria_quinzena.append({
+            "quinzena": quinzena,
             "categoria": categoria_top,
             "qtd": int(total_top)
         })
 
-    return top_categoria_semana
+    return top_categoria_quinzena
 
 def categoria(df):
     # 3. Categorias mais frequentes com agrupamento por similaridade
