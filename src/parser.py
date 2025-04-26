@@ -12,7 +12,7 @@ try:
 except LookupError:
     nltk.download("stopwords")
 
-stopwords_pt = set(stopwords.words('portuguese'))
+stopwords_pt = set(unidecode.unidecode(w) for w in stopwords.words('portuguese'))
 regex_solicitante = re.compile(r'^.*?Solicitante:.*?\n', flags=re.IGNORECASE | re.DOTALL)
 punct_translator = str.maketrans('', '', string.punctuation)
 
