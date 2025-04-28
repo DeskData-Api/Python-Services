@@ -1,3 +1,5 @@
+version: "3.8"
+
 services:
   db:
     image: postgres:15
@@ -10,6 +12,40 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    image: node:20
+    container_name: chamados_backend
+    working_dir: /app
+    volumes:
+      - ../Backend:/app
+    command: sh -c "npm install && npx prisma generate && npm start"
+    ports:
+      - "3003:3003"
+    depends_on:
+      - db
+
+  # frontend:
+  #   image: node:20
+  #   container_name: chamados_frontend
+  #   working_dir: /app
+  #   volumes:
+  #     - ../Frontend-Web/Frontend-Web:/app
+  #   command: sh -c "npm install && npm run dev"
+  #   ports:
+  #     - "5173:5173"
+  #   depends_on:
+  #     - backend
+
+  python_service:
+    image: python:3.11
+    container_name: chamados_python
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: sh -c "pip install -r requirements.txt && python src/main.py"
+    depends_on:
+      - db
 
 volumes:
   postgres_data:

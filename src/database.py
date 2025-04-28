@@ -1,4 +1,5 @@
 import psycopg2
+import time
 from psycopg2.extras import RealDictCursor
 
 class Database:
@@ -13,6 +14,18 @@ class Database:
 
     def connect(self):
         return psycopg2.connect(**self.conn_params, cursor_factory=RealDictCursor)
+
+    def wait_for_db(params, retries=5, delay=3):
+        for i in range(retries):
+            try:
+                conn = psycopg2.connect(**params)
+                conn.close()
+                print("✅ Banco de dados disponível!")
+                return
+            except psycopg2.OperationalError as e:
+                print(f"⏳ Tentativa {i+1} falhou: {e}")
+                time.sleep(delay)
+        raise Exception("❌ Não foi possível conectar ao banco de dados após várias tentativas.")
 
     def initialize(self):
         conn = self.connect()
@@ -77,3 +90,30 @@ class Database:
             return False
         finally:
             conn.close()
+            
+    def insert_similaridades(self, similaridades):
+        conn = self.connect()
+        try:
+            with conn.cursor() as cur:
+                for item in similaridades:
+                    try:
+                        cur.execute("""
+                            INSERT INTO similaridade_chamados (chamado_1, chamado_2, label, score)
+                            VALUES (%s, %s, %s, %s)
+                        """, (
+                            int(item['chamado_1']),
+                            int(item['chamado_2']),
+                            str(item['label']),
+                            float(item['score'])
+                        ))
+                        conn.commit()  # Comita a inserção bem-sucedida
+                    except Exception as e:
+                        conn.rollback()  # Reverte apenas essa transação com erro
+                        print(f"❌ Erro ao inserir item {item}: {e}")
+            print("✅ Inserção de similaridades concluída com sucesso.")
+        except Exception as e:
+            print(f"❌ Erro na transação geral: {e}")
+        finally:
+            conn.close()
+
+
