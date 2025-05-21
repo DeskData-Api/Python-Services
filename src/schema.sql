@@ -60,11 +60,11 @@ CREATE TABLE analise_pln_chamados (
     insights_temporais TEXT[]
 );
 
--- CREATE TABLE similaridade_chamados (
---     id SERIAL PRIMARY KEY,
---     chamado_1 INT,
---     chamado_2 INT,
---     label TEXT,
---     score NUMERIC,
---     created_at TIMESTAMP DEFAULT NOW()
--- );
+CREATE TABLE similaridade_chamados (
+    id SERIAL PRIMARY KEY,
+    chamado_1 INT,
+    chamado_2 INT,
+    label TEXT,
+    score NUMERIC,
+    created_at TIMESTAMP DEFAULT NOW()
+);
