@@ -36,6 +36,7 @@ class ModelagemTopicos:
                     cur.execute("""
                         CREATE TABLE IF NOT EXISTS topicos_lda (
                             id SERIAL PRIMARY KEY,
+                            data_analise TIMESTAMP DEFAULT NOW(),
                             topicos JSONB
                         );
                     """)
