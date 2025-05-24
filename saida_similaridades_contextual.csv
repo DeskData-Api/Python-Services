@@ -108,7 +108,7 @@ chamado_1,chamado_2,label,score
 13777,12613,exclusao usuario sistema point serv ≈ construtora portoconstrutora porto ,70.9
 13777,12612,exclusao usuario sistema point serv ≈ construtora portoconstrutora porto ,69.49
 13777,12610,exclusao usuario sistema point serv ≈ acesso sistema,71.66
-13777,12607,exclusao usuario sistema point serv ≈ re solicitacao acesso laryssa monte,60.5
+13777,12607,exclusao usuario sistema point serv ≈ re solicitacao acesso laryssa monte,60.51
 13777,12606,exclusao usuario sistema point serv ≈ usuarios nao aparecem mapa,64.22
 13777,12599,exclusao usuario sistema point serv ≈ construtora portoconstrutora porto ,68.93
 13777,12598,exclusao usuario sistema point serv ≈ moldem problema,53.36
@@ -499,7 +499,7 @@ chamado_1,chamado_2,label,score
 13650,12998,res construtora portofs company4142 ≈ construtora portoconstrutora porto ,74.24
 13650,13001,res construtora portofs company4142 ≈ point sevice correcao cpf,62.14
 13650,12999,res construtora portofs company4142 ≈ construtora portoconstrutora porto ,73.52
-13650,12995,res construtora portofs company4142 ≈ cadastro funcionario emater,57.25
+13650,12995,res construtora portofs company4142 ≈ cadastro funcionario emater,57.26
 13650,12993,res construtora portofs company4142 ≈ cadastro usuarios point service,78.53
 13650,12989,res construtora portofs company4142 ≈ cadastro cadastro point service,57.27
 13650,12736,res construtora portofs company4142 ≈ cadastro conta point service,76.37
@@ -1204,7 +1204,7 @@ chamado_1,chamado_2,label,score
 13513,12000,demissao colaborador aviso previo t ≈ erro lancar preventiva,53.85
 13513,11929,demissao colaborador aviso previo t ≈ monitoramento possivel intercorrenc,50.16
 13513,11920,demissao colaborador aviso previo t ≈ corretiva nao vincula solicitacao,52.29
-13513,11906,demissao colaborador aviso previo t ≈ erro lancar corretivas sistema,51.62
+13513,11906,demissao colaborador aviso previo t ≈ erro lancar corretivas sistema,51.61
 13513,11871,demissao colaborador aviso previo t ≈ errors in the monitor monitoramento,52.82
 13513,11864,demissao colaborador aviso previo t ≈ problema vinculacao sistema point s,52.27
 13513,11853,demissao colaborador aviso previo t ≈ problema lancar preventiva regiao n,52.41
@@ -1722,7 +1722,7 @@ chamado_1,chamado_2,label,score
 13259,12000,bug sincronizacao automatica app ≈ erro lancar preventiva,52.87
 13259,11935,bug sincronizacao automatica app ≈ atualizacao usuario,53.23
 13259,11925,bug sincronizacao automatica app ≈ acesso sistema cracha,51.51
-13259,11864,bug sincronizacao automatica app ≈ problema vinculacao sistema point s,56.92
+13259,11864,bug sincronizacao automatica app ≈ problema vinculacao sistema point s,56.93
 13259,11816,bug sincronizacao automatica app ≈ solicitacao mudanca funcao,50.76
 13259,11722,bug sincronizacao automatica app ≈ bugs sistema point service,57.64
 13259,11750,bug sincronizacao automatica app ≈ critical repeated monitoring errors,50.3
@@ -1866,7 +1866,7 @@ chamado_1,chamado_2,label,score
 13266,11846,re adicao obras point service ≈ acesso plataforma jira,54.68
 13266,11840,re adicao obras point service ≈ criacao usuario acesso admin,73.29
 13266,11824,re adicao obras point service ≈ solicitacao cadastro colaboradores,61.44
-13266,11816,re adicao obras point service ≈ solicitacao mudanca funcao,55.45
+13266,11816,re adicao obras point service ≈ solicitacao mudanca funcao,55.46
 13266,11774,re adicao obras point service ≈ solicitacao inclusao anexo ix,60.6
 13266,11754,re adicao obras point service ≈ cadastro gestores point service,64.46
 13266,11725,re adicao obras point service ≈ problema preventivas regiao norte,50.77
@@ -2063,7 +2063,7 @@ chamado_1,chamado_2,label,score
 13264,12537,solicitacao acesso ≈ solicitar acesso abrir,57.74
 13264,12534,solicitacao acesso ≈ criacao senha login,50.14
 13264,12528,solicitacao acesso ≈ assunto vazio,65.91
-13264,12527,solicitacao acesso ≈ fwd dados servidores,57.89
+13264,12527,solicitacao acesso ≈ fwd dados servidores,57.88
 13264,12523,solicitacao acesso ≈ acrescimo unidades,61.62
 13264,12515,solicitacao acesso ≈ atualizacao sistema point service,54.83
 13264,12486,solicitacao acesso ≈ solicitacao usuarios saude tocantin,52.08
@@ -2382,7 +2382,7 @@ chamado_1,chamado_2,label,score
 13252,12657,cancelamento preventivas ≈ cancelamento ordem xambioa,55.92
 13252,12652,cancelamento preventivas ≈ 03112024,59.29
 13252,12639,cancelamento preventivas ≈ permissao usuario,52.55
-13252,12627,cancelamento preventivas ≈ solicitacao cancelamento ordens reg,62.73
+13252,12627,cancelamento preventivas ≈ solicitacao cancelamento ordens reg,62.72
 13252,12626,cancelamento preventivas ≈ erro sincronizacao incidente status,54.32
 13252,12625,cancelamento preventivas ≈ problema preventivas mes outubro re,65.73
 13252,12608,cancelamento preventivas ≈ cancelamento ordem gurupi,60.62
@@ -2740,7 +2740,7 @@ chamado_1,chamado_2,label,score
 13236,11840,demissao colaborador indenizadoterm ≈ criacao usuario acesso admin,68.12
 13236,11824,demissao colaborador indenizadoterm ≈ solicitacao cadastro colaboradores,62.04
 13236,11816,demissao colaborador indenizadoterm ≈ solicitacao mudanca funcao,59.4
-13236,11774,demissao colaborador indenizadoterm ≈ solicitacao inclusao anexo ix,67.68
+13236,11774,demissao colaborador indenizadoterm ≈ solicitacao inclusao anexo ix,67.69
 13236,11760,demissao colaborador indenizadoterm ≈ desvincular,51.55
 13236,11754,demissao colaborador indenizadoterm ≈ cadastro gestores point service,59.51
 13236,11712,demissao colaborador indenizadoterm ≈ cadastro fiscal contrato unidade al,51.47
@@ -2914,7 +2914,7 @@ chamado_1,chamado_2,label,score
 13225,12736,transferencia ordens servico unidad ≈ cadastro conta point service,61.23
 13225,12986,transferencia ordens servico unidad ≈ inativacao usuario araguaina,66.88
 13225,12985,transferencia ordens servico unidad ≈ erro sistema nao vincula paraiso,54.48
-13225,12920,transferencia ordens servico unidad ≈ cadastro usuario point service,63.48
+13225,12920,transferencia ordens servico unidad ≈ cadastro usuario point service,63.49
 13225,12888,transferencia ordens servico unidad ≈ cadastro usuario hgp,55.96
 13225,12817,transferencia ordens servico unidad ≈ 07122024,65.48
 13225,12818,transferencia ordens servico unidad ≈ solicitacao cadastro login sistema ,60.2
@@ -3200,7 +3200,7 @@ chamado_1,chamado_2,label,score
 13222,12204,demissao colaborador aviso previo t ≈ pedido inclusao opcoes plataforma p,59.64
 13222,12199,demissao colaborador aviso previo t ≈ pointservice escritorio fs bsb,53.26
 13222,11979,demissao colaborador aviso previo t ≈ boqueio sinal,57.94
-13222,11935,demissao colaborador aviso previo t ≈ atualizacao usuario,56.83
+13222,11935,demissao colaborador aviso previo t ≈ atualizacao usuario,56.84
 13222,11842,demissao colaborador aviso previo t ≈ problemas point service,50.94
 13222,11762,demissao colaborador aviso previo t ≈ erro layout impressao point service,51.59
 13222,11722,demissao colaborador aviso previo t ≈ bugs sistema point service,53.33
@@ -3527,7 +3527,7 @@ chamado_1,chamado_2,label,score
 12996,12818,inativacao usuarios goiania ≈ solicitacao cadastro login sistema ,58.41
 12996,12815,inativacao usuarios goiania ≈ solicitacao atualizacao permissoes,67.87
 12996,12810,inativacao usuarios goiania ≈ criacao usuario point service,62.14
-12996,12809,inativacao usuarios goiania ≈ construtora portoconstrutora porto ,55.11
+12996,12809,inativacao usuarios goiania ≈ construtora portoconstrutora porto ,55.12
 12996,12803,inativacao usuarios goiania ≈ construtora portoconstrutora porto ,55.75
 12996,12808,inativacao usuarios goiania ≈ consulta dispositivos,59.04
 12996,12807,inativacao usuarios goiania ≈ registro localizacao usuario celula,53.28
@@ -4406,7 +4406,7 @@ chamado_1,chamado_2,label,score
 12997,12504,aplicativo point service problema d ≈ erro sistema,65.57
 12997,12500,aplicativo point service problema d ≈ aplicativo problema,50.62
 12997,12460,aplicativo point service problema d ≈ cadastro usuarios,53.15
-12997,12353,aplicativo point service problema d ≈ cadastro sistema point service,60.36
+12997,12353,aplicativo point service problema d ≈ cadastro sistema point service,60.37
 12997,12316,aplicativo point service problema d ≈ treinamento point service,57.47
 12997,12312,aplicativo point service problema d ≈ mudanca permissao usuario,55.87
 12997,12302,aplicativo point service problema d ≈ erro sistema point service distribu,74.47
@@ -4713,7 +4713,7 @@ chamado_1,chamado_2,label,score
 13018,11925,solicitacao logins point service ≈ acesso sistema cracha,73.05
 13018,11912,solicitacao logins point service ≈ nao vincula solicitacao,50.85
 13018,11904,solicitacao logins point service ≈ construtora portoconstrutora porto ,72.89
-13018,11902,solicitacao logins point service ≈ construtora portoconstrutora porto ,71.3
+13018,11902,solicitacao logins point service ≈ construtora portoconstrutora porto ,71.31
 13018,11885,solicitacao logins point service ≈ cadastro usuario araguaina,52.66
 13018,11876,solicitacao logins point service ≈ construtora portoconstrutora porto ,66.51
 13018,11864,solicitacao logins point service ≈ problema vinculacao sistema point s,50.31
@@ -4912,7 +4912,7 @@ chamado_1,chamado_2,label,score
 13016,12786,mapa colaboradores ≈ demissao colaborador aviso previo t,53.76
 13016,12778,mapa colaboradores ≈ cadastro usuario,59.53
 13016,12771,mapa colaboradores ≈ adicao novos colaboradores point se,63.66
-13016,12752,mapa colaboradores ≈ liberacao acesso regiao norte,56.88
+13016,12752,mapa colaboradores ≈ liberacao acesso regiao norte,56.89
 13016,12741,mapa colaboradores ≈ navegacao dashboard unidades,59.69
 13016,12740,mapa colaboradores ≈ construtora porto sa,50.78
 13016,12727,mapa colaboradores ≈ construtora portoconstrutora porto ,51.89
@@ -5769,7 +5769,7 @@ chamado_1,chamado_2,label,score
 12993,12676,cadastro usuarios point service ≈ enc construtora portoconstrutora po,62.76
 12993,12661,cadastro usuarios point service ≈ atribuicoes perfil point service,69.82
 12993,12658,cadastro usuarios point service ≈ cadastro,64.85
-12993,12653,cadastro usuarios point service ≈ construtora portoconstrutora porto ,79.58
+12993,12653,cadastro usuarios point service ≈ construtora portoconstrutora porto ,79.59
 12993,12652,cadastro usuarios point service ≈ 03112024,67.99
 12993,12650,cadastro usuarios point service ≈ enc construtora portofs company3428,68.55
 12993,12616,cadastro usuarios point service ≈ permissao acesso colaborador unidad,72.95
@@ -6256,7 +6256,7 @@ chamado_1,chamado_2,label,score
 12986,12095,inativacao usuario araguaina ≈ liberacao usurario point service,64.73
 12986,12092,inativacao usuario araguaina ≈ fwd pointservice atualizacao,51.42
 12986,12042,inativacao usuario araguaina ≈ ativacao usuario,59.64
-12986,12004,inativacao usuario araguaina ≈ problema cadastro,62.75
+12986,12004,inativacao usuario araguaina ≈ problema cadastro,62.74
 12986,12000,inativacao usuario araguaina ≈ erro lancar preventiva,51.56
 12986,11981,inativacao usuario araguaina ≈ cancelamento ordens preventivas,55.61
 12986,11943,inativacao usuario araguaina ≈ enc cadastro funcionario,53.91
@@ -6601,7 +6601,7 @@ chamado_1,chamado_2,label,score
 12888,12818,cadastro usuario hgp ≈ solicitacao cadastro login sistema ,79.22
 12888,12815,cadastro usuario hgp ≈ solicitacao atualizacao permissoes,59.55
 12888,12810,cadastro usuario hgp ≈ criacao usuario point service,77.68
-12888,12809,cadastro usuario hgp ≈ construtora portoconstrutora porto ,73.55
+12888,12809,cadastro usuario hgp ≈ construtora portoconstrutora porto ,73.56
 12888,12803,cadastro usuario hgp ≈ construtora portoconstrutora porto ,71.41
 12888,12808,cadastro usuario hgp ≈ consulta dispositivos,56.67
 12888,12807,cadastro usuario hgp ≈ registro localizacao usuario celula,54.89
@@ -6754,7 +6754,7 @@ chamado_1,chamado_2,label,score
 12817,12815,07122024 ≈ solicitacao atualizacao permissoes,55.81
 12817,12810,07122024 ≈ criacao usuario point service,63.04
 12817,12809,07122024 ≈ construtora portoconstrutora porto ,72.69
-12817,12803,07122024 ≈ construtora portoconstrutora porto ,72.44
+12817,12803,07122024 ≈ construtora portoconstrutora porto ,72.43
 12817,12802,07122024 ≈ construtora portoconstrutora porto ,75.49
 12817,12801,07122024 ≈ construtora portoconstrutora porto ,73.94
 12817,12799,07122024 ≈ teste 04,55.3
@@ -7302,7 +7302,7 @@ chamado_1,chamado_2,label,score
 12815,11700,solicitacao atualizacao permissoes ≈ cadastrologin point service,57.92
 12815,11674,solicitacao atualizacao permissoes ≈ alteracoes formularios,56.4
 12814,12813,hospital geral palmas offline ≈ hospital regional porto nacional ap,52.55
-12814,12776,hospital geral palmas offline ≈ hemocentro regional araguaina offli,64.68
+12814,12776,hospital geral palmas offline ≈ hemocentro regional araguaina offli,64.67
 12814,12774,hospital geral palmas offline ≈ hospital regional xambioa offline e,81.81
 12814,12738,hospital geral palmas offline ≈ hospital regional guarai off intern,84.33
 12814,12733,hospital geral palmas offline ≈ hospital regional araguaina offline,83.75
@@ -7497,7 +7497,7 @@ chamado_1,chamado_2,label,score
 12810,11893,criacao usuario point service ≈ criar usuario porto nacional,50.41
 12810,11885,criacao usuario point service ≈ cadastro usuario araguaina,51.69
 12810,11876,criacao usuario point service ≈ construtora portoconstrutora porto ,75.69
-12810,11867,criacao usuario point service ≈ problema lancar solicitacao servico,51.67
+12810,11867,criacao usuario point service ≈ problema lancar solicitacao servico,51.66
 12810,11864,criacao usuario point service ≈ problema vinculacao sistema point s,56.07
 12810,11859,criacao usuario point service ≈ solicitacao cadastro colaborador,71.46
 12810,11857,criacao usuario point service ≈ fw solicitacao cadastro point servi,66.93
@@ -7715,7 +7715,7 @@ chamado_1,chamado_2,label,score
 12808,12782,consulta dispositivos ≈ alteracao versao microcontroladores,53.21
 12808,12778,consulta dispositivos ≈ cadastro usuario,62.4
 12808,12771,consulta dispositivos ≈ adicao novos colaboradores point se,50.04
-12808,12770,consulta dispositivos ≈ exclusao usuario sistema point serv,52.44
+12808,12770,consulta dispositivos ≈ exclusao usuario sistema point serv,52.43
 12808,12769,consulta dispositivos ≈ exclusao usuario sistema point serv,52.73
 12808,12752,consulta dispositivos ≈ liberacao acesso regiao norte,64.47
 12808,12741,consulta dispositivos ≈ navegacao dashboard unidades,53.91
@@ -8494,7 +8494,7 @@ chamado_1,chamado_2,label,score
 12788,12396,enc construtora portofs company3762 ≈ fwd,56.18
 12788,12372,enc construtora portofs company3762 ≈ ordens servico medicao contratos 03,58.63
 12788,12355,enc construtora portofs company3762 ≈ solicitacao hemocentro araguaina,61.8
-12788,12353,enc construtora portofs company3762 ≈ cadastro sistema point service,71.19
+12788,12353,enc construtora portofs company3762 ≈ cadastro sistema point service,71.18
 12788,12349,enc construtora portofs company3762 ≈ solicitacao cadastro,60.03
 12788,12312,enc construtora portofs company3762 ≈ mudanca permissao usuario,57.64
 12788,12310,enc construtora portofs company3762 ≈ cadastro usuario sienge,57.66
@@ -9212,7 +9212,7 @@ chamado_1,chamado_2,label,score
 12771,12695,adicao novos colaboradores point se ≈ problema cadastro equpamentos ativo,56.72
 12771,12678,adicao novos colaboradores point se ≈ construtora portoconstrutora porto ,70.53
 12771,12677,adicao novos colaboradores point se ≈ tela gerencial nao aparece,50.69
-12771,12676,adicao novos colaboradores point se ≈ enc construtora portoconstrutora po,54.89
+12771,12676,adicao novos colaboradores point se ≈ enc construtora portoconstrutora po,54.9
 12771,12661,adicao novos colaboradores point se ≈ atribuicoes perfil point service,61.91
 12771,12658,adicao novos colaboradores point se ≈ cadastro,54.99
 12771,12653,adicao novos colaboradores point se ≈ construtora portoconstrutora porto ,72.5
@@ -9865,7 +9865,7 @@ chamado_1,chamado_2,label,score
 12740,12402,construtora porto sa ≈ construtora portoconstrutora porto ,71.92
 12740,12396,construtora porto sa ≈ fwd,58.44
 12740,12380,construtora porto sa ≈ troca antena,50.87
-12740,12378,construtora porto sa ≈ aplicativo problema,51.78
+12740,12378,construtora porto sa ≈ aplicativo problema,51.77
 12740,12372,construtora porto sa ≈ ordens servico medicao contratos 03,50.94
 12740,12355,construtora porto sa ≈ solicitacao hemocentro araguaina,53.96
 12740,12353,construtora porto sa ≈ cadastro sistema point service,61.69
@@ -10383,7 +10383,7 @@ chamado_1,chamado_2,label,score
 12726,11754,construtora portoconstrutora porto  ≈ cadastro gestores point service,70.34
 12726,11720,construtora portoconstrutora porto  ≈ kit retirado desativacao unidade di,50.47
 12726,11703,construtora portoconstrutora porto  ≈ solicitacao recuperacao senha,70.07
-12726,11700,construtora portoconstrutora porto  ≈ cadastrologin point service,74.48
+12726,11700,construtora portoconstrutora porto  ≈ cadastrologin point service,74.49
 12725,12722,cancelamento ordem araguacu ≈ cadastro colaborador,53.45
 12725,12720,cancelamento ordem araguacu ≈ cancelamento ordem arraias,65.7
 12725,12706,cancelamento ordem araguacu ≈ cancelamento ordens augustinopolis,73.5
@@ -10532,7 +10532,7 @@ chamado_1,chamado_2,label,score
 12722,12561,cadastro colaborador ≈ solicitacao cadastro unidade,69.68
 12722,12554,cadastro colaborador ≈ hrguarai sobre lancamento corretiva,71.35
 12722,12553,cadastro colaborador ≈ paraiso preventivas corretivas poin,72.86
-12722,12551,cadastro colaborador ≈ erro lancamento corretivas,57.98
+12722,12551,cadastro colaborador ≈ erro lancamento corretivas,57.97
 12722,12548,cadastro colaborador ≈ enviando certeza enviamos estao diz,56.38
 12722,12545,cadastro colaborador ≈ senha acesso tambem disse,54.65
 12722,12543,cadastro colaborador ≈ acesso gestora caps girassol regiao,53.45
@@ -11202,7 +11202,7 @@ chamado_1,chamado_2,label,score
 12703,11876,cadasro funcionario ≈ construtora portoconstrutora porto ,53.36
 12703,11859,cadasro funcionario ≈ solicitacao cadastro colaborador,51.2
 12703,11857,cadasro funcionario ≈ fw solicitacao cadastro point servi,51.28
-12703,11851,cadasro funcionario ≈ novos itens,66.27
+12703,11851,cadasro funcionario ≈ novos itens,66.26
 12703,11824,cadasro funcionario ≈ solicitacao cadastro colaboradores,58.4
 12703,11760,cadasro funcionario ≈ desvincular,51.56
 12703,11754,cadasro funcionario ≈ cadastro gestores point service,56.42
@@ -11448,7 +11448,7 @@ chamado_1,chamado_2,label,score
 12695,11840,problema cadastro equpamentos ativo ≈ criacao usuario acesso admin,53.07
 12695,11838,problema cadastro equpamentos ativo ≈ alteracao formularios,65.35
 12695,11824,problema cadastro equpamentos ativo ≈ solicitacao cadastro colaboradores,59.02
-12695,11816,problema cadastro equpamentos ativo ≈ solicitacao mudanca funcao,51.21
+12695,11816,problema cadastro equpamentos ativo ≈ solicitacao mudanca funcao,51.22
 12695,11779,problema cadastro equpamentos ativo ≈ atualizacao sistema,53.81
 12695,11774,problema cadastro equpamentos ativo ≈ solicitacao inclusao anexo ix,71.6
 12695,11762,problema cadastro equpamentos ativo ≈ erro layout impressao point service,70.33
@@ -12125,7 +12125,7 @@ chamado_1,chamado_2,label,score
 12658,11816,cadastro ≈ solicitacao mudanca funcao,57.84
 12658,11774,cadastro ≈ solicitacao inclusao anexo ix,74.3
 12658,11760,cadastro ≈ desvincular,56.76
-12658,11703,cadastro ≈ solicitacao recuperacao senha,69.37
+12658,11703,cadastro ≈ solicitacao recuperacao senha,69.36
 12658,11700,cadastro ≈ cadastrologin point service,68.75
 12658,11674,cadastro ≈ alteracoes formularios,52.74
 12657,12627,cancelamento ordem xambioa ≈ solicitacao cancelamento ordens reg,70.19
@@ -12204,7 +12204,7 @@ chamado_1,chamado_2,label,score
 12652,12624,03112024 ≈ erro acesso tela crachas,55.65
 12652,12623,03112024 ≈ falha localizacao roraima,63.29
 12652,12622,03112024 ≈ usuarios localizacao gurupi,57.82
-12652,12615,03112024 ≈ construtora portoconstrutora porto ,71.41
+12652,12615,03112024 ≈ construtora portoconstrutora porto ,71.4
 12652,12613,03112024 ≈ construtora portoconstrutora porto ,71.99
 12652,12612,03112024 ≈ construtora portoconstrutora porto ,73.22
 12652,12607,03112024 ≈ re solicitacao acesso laryssa monte,58.37
@@ -12212,7 +12212,7 @@ chamado_1,chamado_2,label,score
 12652,12599,03112024 ≈ construtora portoconstrutora porto ,70.29
 12652,12598,03112024 ≈ moldem problema,50.6
 12652,12578,03112024 ≈ smtp basic authentication,55.93
-12652,12571,03112024 ≈ enc construtora portoconstrutora po,75.65
+12652,12571,03112024 ≈ enc construtora portoconstrutora po,75.64
 12652,12566,03112024 ≈ enc paraiso preventivas corretivas ,65.7
 12652,12561,03112024 ≈ solicitacao cadastro unidade,68.38
 12652,12553,03112024 ≈ paraiso preventivas corretivas poin,50.48
@@ -13012,7 +13012,7 @@ chamado_1,chamado_2,label,score
 12614,11703,unidades cadastrar point service ≈ solicitacao recuperacao senha,53.46
 12614,11700,unidades cadastrar point service ≈ cadastrologin point service,59.85
 12613,12610,construtora portoconstrutora porto  ≈ acesso sistema,58.28
-12613,12607,construtora portoconstrutora porto  ≈ re solicitacao acesso laryssa monte,52.71
+12613,12607,construtora portoconstrutora porto  ≈ re solicitacao acesso laryssa monte,52.72
 12613,12606,construtora portoconstrutora porto  ≈ usuarios nao aparecem mapa,50.02
 12613,12578,construtora portoconstrutora porto  ≈ smtp basic authentication,57.51
 12613,12571,construtora portoconstrutora porto  ≈ enc construtora portoconstrutora po,64.41
@@ -13376,7 +13376,7 @@ chamado_1,chamado_2,label,score
 12599,12102,construtora portoconstrutora porto  ≈ cadastra funcionario,56.57
 12599,12095,construtora portoconstrutora porto  ≈ liberacao usurario point service,53.37
 12599,11943,construtora portoconstrutora porto  ≈ enc cadastro funcionario,58.71
-12599,11941,construtora portoconstrutora porto  ≈ enc cadastro crachar,51.63
+12599,11941,construtora portoconstrutora porto  ≈ enc cadastro crachar,51.64
 12599,11925,construtora portoconstrutora porto  ≈ acesso sistema cracha,61.27
 12599,11893,construtora portoconstrutora porto  ≈ criar usuario porto nacional,50.58
 12599,11859,construtora portoconstrutora porto  ≈ solicitacao cadastro colaborador,73.51
@@ -14537,7 +14537,7 @@ chamado_1,chamado_2,label,score
 12529,12392,hospital regional gurupi offline ≈ etsus palmas offline,78.19
 12528,12527,assunto vazio ≈ fwd dados servidores,64.61
 12528,12523,assunto vazio ≈ acrescimo unidades,63.59
-12528,12515,assunto vazio ≈ atualizacao sistema point service,70.89
+12528,12515,assunto vazio ≈ atualizacao sistema point service,70.9
 12528,12504,assunto vazio ≈ erro sistema,52.84
 12528,12486,assunto vazio ≈ solicitacao usuarios saude tocantin,54.64
 12528,12450,assunto vazio ≈ res atendimento suporte experiencia,50.53
@@ -14969,7 +14969,7 @@ chamado_1,chamado_2,label,score
 12500,11748,aplicativo problema ≈ erro tentar visualizar ordens corre,52.22
 12498,12346,cancelamento ordem arapoema ≈ preventivas plano manutencao cancel,63.77
 12498,12333,cancelamento ordem arapoema ≈ cancelamento ordem anexo iii,81.44
-12498,12332,cancelamento ordem arapoema ≈ cancelamento ordem 80097042024,69.91
+12498,12332,cancelamento ordem arapoema ≈ cancelamento ordem 80097042024,69.9
 12498,11981,cancelamento ordem arapoema ≈ cancelamento ordens preventivas,69.07
 12498,11944,cancelamento ordem arapoema ≈ cancelamento ordem porto nacional,62.97
 12498,11884,cancelamento ordem arapoema ≈ cancelamento ordem etsus,82.72
@@ -15633,7 +15633,7 @@ chamado_1,chamado_2,label,score
 12355,12349,solicitacao hemocentro araguaina ≈ solicitacao cadastro,57.89
 12355,12333,solicitacao hemocentro araguaina ≈ cancelamento ordem anexo iii,50.87
 12355,12332,solicitacao hemocentro araguaina ≈ cancelamento ordem 80097042024,61.92
-12355,12312,solicitacao hemocentro araguaina ≈ mudanca permissao usuario,51.17
+12355,12312,solicitacao hemocentro araguaina ≈ mudanca permissao usuario,51.18
 12355,12302,solicitacao hemocentro araguaina ≈ erro sistema point service distribu,51.55
 12355,12218,solicitacao hemocentro araguaina ≈ re cadastrar funcionario,61.38
 12355,12204,solicitacao hemocentro araguaina ≈ pedido inclusao opcoes plataforma p,50.03
@@ -16491,7 +16491,7 @@ chamado_1,chamado_2,label,score
 11912,11864,nao vincula solicitacao ≈ problema vinculacao sistema point s,70.12
 11912,11857,nao vincula solicitacao ≈ fw solicitacao cadastro point servi,50.95
 11912,11851,nao vincula solicitacao ≈ novos itens,71.33
-11912,11846,nao vincula solicitacao ≈ acesso plataforma jira,64.27
+11912,11846,nao vincula solicitacao ≈ acesso plataforma jira,64.26
 11912,11840,nao vincula solicitacao ≈ criacao usuario acesso admin,53.57
 11912,11838,nao vincula solicitacao ≈ alteracao formularios,50.76
 11912,11824,nao vincula solicitacao ≈ solicitacao cadastro colaboradores,50.5
@@ -16755,7 +16755,7 @@ chamado_1,chamado_2,label,score
 11762,11722,erro layout impressao point service ≈ bugs sistema point service,56.78
 11762,11748,erro layout impressao point service ≈ erro tentar visualizar ordens corre,60.96
 11762,11703,erro layout impressao point service ≈ solicitacao recuperacao senha,54.24
-11762,11700,erro layout impressao point service ≈ cadastrologin point service,52.3
+11762,11700,erro layout impressao point service ≈ cadastrologin point service,52.29
 11762,11674,erro layout impressao point service ≈ alteracoes formularios,56.07
 11760,11722,desvincular ≈ bugs sistema point service,65.39
 11760,11748,desvincular ≈ erro tentar visualizar ordens corre,59.68
