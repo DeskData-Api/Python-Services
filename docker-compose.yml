@@ -19,7 +19,7 @@ services:
     working_dir: /app
     volumes:
       - ../Backend:/app
-    command: sh -c "npm install && npx prisma generate && npm start"
+    command: sh -c "npm install && npx prisma generate && npx prisma db push && npm start"
     ports:
       - "3003:3003"
     depends_on:
@@ -37,15 +37,15 @@ services:
   #   depends_on:
   #     - backend
 
-  python_service:
-    image: python:3.11
-    container_name: chamados_python
-    working_dir: /app
-    volumes:
-      - .:/app
-    command: sh -c "pip install -r requirements.txt && python src/main.py"
-    depends_on:
-      - db
+  # python_service:
+  #   image: python:3.11
+  #   container_name: chamados_python
+  #   working_dir: /app
+  #   volumes:
+  #     - .:/app
+  #   command: sh -c "pip install -r requirements.txt && python src/main.py"
+  #   depends_on:
+  #     - db
 
 volumes:
   postgres_data:
