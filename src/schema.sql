@@ -2,7 +2,7 @@
 DROP TABLE IF EXISTS analise_pln_chamados;
 DROP TABLE IF EXISTS chamados_simplificados;
 DROP TABLE IF EXISTS chamados;
--- DROP TABLE IF EXISTS similaridade_chamados;
+DROP TABLE IF EXISTS similaridade_chamados;
 
 -- Recria a tabela 'chamados'
 CREATE TABLE chamados (
@@ -51,8 +51,8 @@ CREATE INDEX idx_chamados_simplificados_criado ON chamados_simplificados(criado)
 -- Cria a nova estrutura da tabela com suporte a análises mais complexas
 CREATE TABLE analise_pln_chamados (
     id SERIAL PRIMARY KEY,
-    frequentes_problema TEXT[],                    -- termos mais comuns em descrição
-    frequentes_titulo TEXT[],                     -- termos mais comuns em solução
+    frequentes_problema JSONB,                    -- termos mais comuns em descrição
+    frequentes_titulo JSONB,                     -- termos mais comuns em solução
     agrupamento_categorias JSONB,                  -- agrupamentos semânticos entre categorias
     frequencia_categorias JSONB,                   -- contagem de categorias
     distribuicao_temporal JSONB,                   -- volume de chamados por semana

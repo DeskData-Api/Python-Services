@@ -19,7 +19,7 @@ services:
     working_dir: /app
     volumes:
       - ../Backend:/app
-    command: sh -c "npm install && npx prisma generate && npm start"
+    command: sh -c "npm install && npx prisma generate && npx prisma db push && npm start"
     ports:
       - "3003:3003"
     depends_on:
