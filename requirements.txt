@@ -1,5 +1,3 @@
-psycopg2-binary
-pandas
 click==8.1.8
 colorama==0.4.6
 joblib==1.4.2
@@ -14,6 +12,5 @@ six==1.17.0
 tqdm==4.67.1
 tzdata==2025.1
 Unidecode==1.3.8
-nltk
 Flask
 flask-cors
