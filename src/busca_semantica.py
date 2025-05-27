@@ -1,76 +1,56 @@
 from fastapi import FastAPI, Query
+from fastapi.middleware.cors import CORSMiddleware
 from typing import List
 import psycopg2
-import os
-import re
-from fastapi.middleware.cors import CORSMiddleware
-
-# Conexão com o banco
-DB_HOST = os.getenv("DB_HOST", "localhost")
-DB_PORT = os.getenv("DB_PORT", "5432")
-DB_NAME = os.getenv("DB_NAME", "chamados_db")
-DB_USER = os.getenv("DB_USER", "deskdata")
-DB_PASS = os.getenv("DB_PASS", "deskdata")
+import numpy as np
+from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
 
 app = FastAPI()
 
-# CORS para permitir acesso pelo frontend
+# Libera o frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # ou restrinja para seu domínio
-    allow_credentials=True,
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-def conectar():
-    return psycopg2.connect(
-        host=DB_HOST,
-        port=DB_PORT,
-        dbname=DB_NAME,
-        user=DB_USER,
-        password=DB_PASS
+model = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
+
+def buscar_tickets():
+    conn = psycopg2.connect(
+        host="localhost",
+        database="chamados_db",
+        user="deskdata",
+        password="deskdata"
     )
-
-@app.get("/buscar")
-def buscar_similares(q: str = Query(..., min_length=2)):
-    conn = conectar()
     cursor = conn.cursor()
-
-    termo = q.strip().lower()
-    termo_sanitizado = re.sub(r"\s+", "", termo)
-
-    consulta = """
-        SELECT s.label, s.score,
-               c1.id, c1.titulo, c1.descricao,
-               c2.id, c2.titulo, c2.descricao
-        FROM similaridade_chamados s
-        JOIN chamados c1 ON c1.id = s.chamado_1
-        JOIN chamados c2 ON c2.id = s.chamado_2
-        WHERE REPLACE(LOWER(s.label), ' ', '') ILIKE %s
-        ORDER BY s.score DESC
-        LIMIT 10;
-    """
-
-    cursor.execute(consulta, (f"%{termo_sanitizado}%",))
+    cursor.execute("SELECT chamado_id, titulo, descricao, embedding FROM ticket_embeddings;")
     resultados = cursor.fetchall()
     cursor.close()
     conn.close()
+    return resultados
 
-    return [
-        {
-            "label": row[0],
-            "score": float(row[1]),
-            "chamado_1": {
-                "id": row[2],
-                "titulo": row[3],
-                "descricao": row[4],
-            },
-            "chamado_2": {
-                "id": row[5],
-                "titulo": row[6],
-                "descricao": row[7],
-            }
-        }
-        for row in resultados
-    ]
+@app.get("/search")
+def buscar_semanticamente(q: str = Query(..., min_length=1)):
+
+    consulta_embedding = model.encode(q).reshape(1, -1)
+    tickets = buscar_tickets()
+
+    resultados = []
+    for chamado_id, titulo, descricao, embedding in tickets:
+        if embedding is None:
+            continue
+        emb_array = np.array(embedding).reshape(1, -1)
+        similarity = cosine_similarity(consulta_embedding, emb_array)[0][0]
+        resultados.append({
+            "chamado_id": chamado_id,
+            "titulo": titulo,
+            "descricao": descricao,
+            "similaridade": float(similarity)
+        })
+
+    # Ordena por similaridade
+    resultados_ordenados = sorted(resultados, key=lambda x: x["similaridade"], reverse=True)
+    return resultados_ordenados[:10]
